@@ -3,7 +3,7 @@ import json
 from web3 import Web3
 
 # Criar ou carregar o arquivo JSON para armazenar informações de usuário
-user_data_file = "user_data.json"
+user_data_file = "data/user_data.json"
 try:
     with open(user_data_file, "r") as file:
         user_data = json.load(file)
