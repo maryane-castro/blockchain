@@ -57,6 +57,9 @@ def perform_transaction(sender, sender_private_key, recipient, amount):
     tx_hash = web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
     st.success(f"Transação enviada. Hash: {web3.to_hex(tx_hash)}")
 
+
+
+#inicial
 st.title("Sistema de Gerenciamento Ethereum")
 
 # Inicializar o estado de sessão
@@ -70,7 +73,7 @@ if user_exists(name):
     # Se o usuário já existe, solicitar apenas a chave privada
     private_key = st.text_input("Número da chave", type="password")
 else:
-    # Se o usuário não existe, solicitar o número da conta e a chave privada
+    # Se o usuário não existir, solicitar o número da conta e a chave privada
     account_address = st.text_input("Número da conta")
     private_key = st.text_input("Número da chave", type="password")
 
@@ -84,9 +87,12 @@ if st.button("Entrar"):
             st.error("Chave privada incorreta. Verifique a chave e tente novamente.")
     else:
         # Criar um novo usuário
-        save_user_data(name, account_address, private_key)
-        st.session_state.user = name
-        st.success(f"Usuário cadastrado com sucesso!")
+        if not account_address:
+            st.error("Número da conta é obrigatório para o cadastro.")
+        else:
+            save_user_data(name, account_address, private_key)
+            st.session_state.user = name
+            st.success(f"Usuário cadastrado com sucesso!")
 
 # Se o usuário estiver logado, mostrar as páginas de gerenciamento de contatos e transações
 if st.session_state.user is not None:
