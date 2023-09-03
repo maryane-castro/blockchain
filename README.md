@@ -40,4 +40,3 @@ streamlit run main.py
 
 Isso iniciará o aplicativo em seu navegador padrão. Você poderá usar o aplicativo para fazer login, criar transações Ethereum e gerenciar contatos.
 
-Lembre-se de que este é um exemplo de aplicativo de demonstração e não deve ser usado com contas Ethereum reais em uma rede principal. Certifique-se de estar usando uma rede Ethereum local para fins de teste e desenvolvimento. Certifique-se de manter suas chaves privadas seguras e não compartilhá-las com terceiros.
