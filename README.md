@@ -35,7 +35,7 @@ Você também precisará de uma rede Ethereum local (por exemplo, Ganache) em ex
 Depois de concluir a instalação, você pode executar o aplicativo Streamlit:
 
 ```bash
-streamlit run ethereum_management.py
+streamlit run main.py
 ```
 
 Isso iniciará o aplicativo em seu navegador padrão. Você poderá usar o aplicativo para fazer login, criar transações Ethereum e gerenciar contatos.
